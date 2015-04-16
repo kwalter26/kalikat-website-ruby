@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+%html
+%head
+  %title Kalikat
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = csrf_meta_tags
+
+%body
+  .navbar.navbar-default.navbar-fixed-top.kaliheader
+
+    .navbar-header
+      %a{:class => 'navbar-brand', :href => '#'} KaliKat
+    .collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li.active
+          =link_to 'Home', pages_index_path
+        %li
+          =link_to 'Developement', projects_path
+        %li
+          =link_to 'Contact', pages_contact_path
+  .row
+    .jumbotron
+      .container
+        %h1 KaliKat
+
+  .container-fluid
+    = yield
+
+
