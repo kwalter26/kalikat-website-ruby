@@ -1,29 +1,37 @@
-!!!5
-%html
-  %head
-  %title Kalikat
-  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-  = javascript_include_tag 'application', 'data-turbolinks-track' => true
-  = csrf_meta_tags
-
-  %body
-  .navbar.navbar-default.navbar-fixed-top.kaliheader
-    .navbar-header
-      %a{:class => 'navbar-brand', :href => '#'} KaliKat
-    .collapse.navbar-collapse
-      %ul.nav.navbar-nav
-        %li.active
-          =link_to 'Home', pages_index_path
-        %li
-          =link_to 'Developement', projects_path
-        %li
-          =link_to 'Contact', pages_contact_path
-  .row
-    .jumbotron
-      .container
-        %h1 KaliKat
-
-  .container-fluid
-    = yield
-
-
+<!DOCTYPE html>
+<html>
+<head></head>
+<title>Kalikat</title>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
+<body></body>
+<div class="navbar navbar-default navbar-fixed-top kaliheader">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">KaliKat</a>
+  </div>
+  <div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <%= link_to 'Home', pages_home_path %>
+      </li>
+      <li>
+        <%= link_to 'Developement', projects_path %>
+      </li>
+      <li>
+        <%= link_to 'Contact', pages_contact_path %>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="jumbotron">
+    <div class="container">
+      <h1>KaliKat</h1>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <%= yield %>
+</div>
+</html>
