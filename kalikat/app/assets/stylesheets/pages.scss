@@ -2,5 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .jumbotron{
-  background-image: url("/assets/home_background");
+  background-image: url("home_background");
 }
+.article-section{
+  height: 200px;
+  width: 100%;
+}
+.section_line_odd{
+  background-color: #000000;
+}
+.section_line_even{
+  background-color: #333333;
+  color: #000000;
+}
+

@@ -11,11 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150419044417) do
+ActiveRecord::Schema.define(version: 20150419210418) do
 
   create_table "articles", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title",      limit: 255
+    t.text     "post",       limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "minecraft_users", force: :cascade do |t|
@@ -44,6 +46,9 @@ ActiveRecord::Schema.define(version: 20150419044417) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 255
     t.string   "last_sign_in_ip",        limit: 255
+    t.string   "site_username",          limit: 255
+    t.string   "minecraft_username",     limit: 255
+    t.integer  "privileges",             limit: 4,   default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end
