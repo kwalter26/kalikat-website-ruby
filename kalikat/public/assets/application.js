@@ -1,0 +1,1 @@
+function getPosition(t){for(var o=0,f=0;t;)o+=t.offsetLeft-t.scrollLeft+t.clientLeft,f+=t.offsetTop-t.scrollTop+t.clientTop,t=t.offsetParent;return{x:o,y:f}}(function(){}).call(this),function(){}.call(this),$(document).ready(function(){});
