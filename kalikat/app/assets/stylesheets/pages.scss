@@ -1,17 +1,15 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.jumbotron{
-  background-image: url("home_background");
-}
 .article-section{
   height: 200px;
   width: 100%;
+  margin: 0px 0px 0px 0px;
 }
 .section_line_odd{
-  background-color: white;
+  background-color: #b0b0b0;
 }
 .section_line_even{
-  background-color: #333333;
+  background-color: #8daffe;
   color: #000000;
 }

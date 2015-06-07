@@ -6,32 +6,36 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    .navbar.navbar-default.navbar-fixed-top.kaliheader
-      .navbar-header
-        %a.navbar-brand{:href => "#"} KaliKat
-      .collapse.navbar-collapse
-        %ul.nav.navbar-nav
-          %li
-            = link_to 'Home', pages_home_path
-          %li
-            = link_to 'Development', projects_path
-          %li
-            = link_to 'Forum', articles_path
-          %li
-            = link_to 'Minecraft', pages_minecraft_path
-        %ul.nav.navbar-nav.navbar-right
-          -if user_signed_in?
-            - @user = current_user.site_username
-            %li= link_to 'Signed in as... ' + @user, edit_user_registration_path
-            %li= link_to 'Logout' , destroy_user_session_path, :method => 'delete'
-          -else
-            %li= link_to 'Login' , new_user_session_path
-          %li
-            = link_to 'Contact' , pages_contact_path
-    .row
-      .jumbotron
-        .container
-          %h1 KaliKat
-    %p.notice= notice
-    %p.alert= alert
-    = yield
+    .nav 
+      .container-fluid.navbar.navbar-default.navbar-fixed-top.kaliheader
+        .navbar-header
+          %a.navbar-brand{:href => "/"} KaliKat
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li
+              = link_to 'Home', pages_home_path
+            %li
+              = link_to 'Development', projects_path
+            %li
+              = link_to 'Forum', articles_path
+            %li
+              = link_to 'Minecraft', pages_minecraft_path
+          %ul.nav.navbar-nav.navbar-right
+            -if user_signed_in?
+              - @user = current_user.site_username
+              %li= link_to 'Signed in as... ' + @user, edit_user_registration_path
+              %li= link_to 'Logout' , destroy_user_session_path, :method => 'delete'
+            -else
+              %li= link_to 'Login' , new_user_session_path
+            %li
+              = link_to 'Contact' , pages_contact_path
+    .container-fluid
+      .row
+        .jumbotron
+          .container
+            %h1 KaliKat
+    .container-fluid.kalibody
+      %p.notice= notice
+      %p.alert= alert
+      = yield
+    %footer.kalifooter
