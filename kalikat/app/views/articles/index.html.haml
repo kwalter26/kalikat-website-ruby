@@ -1,22 +1,29 @@
 %h1 Listing articles
 
-%table
+%table.table
   %thead
     %tr
       %th Title
+      %th Picture Url
       %th Post
       %th Options
-  %tbody
+  %tbody.table-hover.table-striped
     - @articles.each do |article|
       %tr
         %td
-          = article.title
+          %h4
+            = article.title
         %td
-          = article.post
+          %h4
+            = article.pic_url
         %td
-          = link_to 'Show', article
-          = link_to 'Edit', edit_article_path(article)
-          = link_to 'Destroy', article, :method => :delete, :confirm => 'Are you sure?'
+          %h4
+            = article.post
+        %td
+          .btn-group
+            = link_to 'Show', article , :class => 'btn btn-default'
+            = link_to 'Edit', edit_article_path(article) ,:class => 'btn btn-info'
+            = link_to 'Destroy', article, :method => :delete, :confirm => 'Are you sure?',:class => 'btn btn-danger'
 
 %br
 

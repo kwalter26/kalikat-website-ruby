@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require_tree .
+//= require jquery
+//= require jquery_ujs
 
 
 
@@ -30,6 +32,12 @@ function getPosition(element) {
 
 $(document).ready(function(){
 
+    $('.article-section').height($(window).height());
+
+    $(window).scroll(function (event) {
+        var scroll = $(window).scrollTop();
+        console.log(scroll);
+    });
 
     /*$(function(){
 

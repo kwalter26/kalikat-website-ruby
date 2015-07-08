@@ -1,6 +1,7 @@
 - @articles.each do |article|
-  .row.article-section{:class => cycle('section_line_odd', 'section_line_even')}
-    .col-md-2
-    .col-md-10
-      %h2= article.title
-      %p= article.post
+  .article-section{:class => cycle('section_line_odd', 'section_line_even')}
+    .row
+      .col-md-2
+      .col-md-10
+        %h2= article.title
+        %p= article.post
